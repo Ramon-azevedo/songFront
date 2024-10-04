@@ -1,0 +1,55 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-image: url(../public/pictures/fundo_1.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* CSS Responsivo para dispositivos móveis */
+@media (max-width: 768px) {
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    overflow: hidden; /* Evita o scroll */
+    
+    /* Fundo responsivo */
+    background-image: url(../pictures/fundo_1.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; /* Centraliza a imagem de fundo */
+  }
+
+  /* Impedir que outros elementos causem scroll */
+  html, body {
+    height: 100%; /* Garante que body ocupe 100% da altura da tela */
+    overflow: hidden; /* Remove barra de rolagem */
+  }
+
+  * {
+    box-sizing: border-box; /* Garante que padding/margem não aumente tamanho dos elementos */
+  }
+}

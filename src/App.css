@@ -1,0 +1,42 @@
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.quadrado {
+  background-color: rgba(134, 85, 21, 0.879);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid #ffffff3c;
+  max-width: 100%; 
+}
+
+@media (max-width: 768px) {
+  #root {
+    max-width: 95%; 
+    padding: 1rem;
+  }
+
+  .quadrado {
+    padding: 20px; 
+    border-radius: 15px; 
+    border: 1px solid rgba(255, 255, 255, 0.7); 
+  }
+}
+
+@media (max-width: 480px) {
+  #root {
+    max-width: 90%; 
+    padding: 0.5rem;
+  }
+
+  .quadrado {
+    padding: 15px; 
+    border-radius: 10px;
+  }
+}
+
+

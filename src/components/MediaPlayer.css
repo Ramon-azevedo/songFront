@@ -1,0 +1,67 @@
+.media-player {
+    max-width: 800px; /* Limite de largura */
+    width: 100%;      /* Ocupa 100% da largura disponível */
+    margin: auto;     /* Centraliza o player na tela */
+}
+
+.current-song-info {
+    margin-bottom: 1rem;
+}
+
+.controls {
+    display: flex; /* Usar flexbox para os botões */
+    justify-content: center; /* Centraliza os botões */
+    margin-bottom: 1rem;
+    background: transparent; /* Fundo transparente para os controles */
+}
+
+.controls button {
+    background: transparent; /* Botões sem fundo */
+    border: none; /* Sem bordas */
+    cursor: pointer; /* Cursor de pointer */
+    margin: 0 10px; /* Margem entre os botões */
+    font-size: 1.5rem; /* Tamanho do ícone */
+    color: #333; /* Cor dos ícones */
+    transition: color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+.controls button:hover {
+    color: #555; /* Cor ao passar o mouse */
+}
+
+.react-player {
+    width: 100% !important;
+    height: 50px !important; /* Altura fixa para mostrar a barra de controle */
+    background: transparent !important; /* Fundo transparente */
+    border: none; /* Remove bordas */
+    position: relative; /* Garante que o player fique no topo */
+    z-index: 1; /* Z-index alto para ficar acima de outros elementos */
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+    .media-player {
+        padding: 1rem;
+        max-width: 100%; /* Remove limite de largura para preencher a tela */
+    }
+  
+    .controls button {
+        padding: 8px 15px; /* Reduzir o tamanho dos botões para telas menores */
+    }
+  
+    .current-song-info h3 {
+        font-size: 1rem; /* Reduzir o tamanho da fonte da música para telas menores */
+    }
+}
+  
+@media (max-width: 480px) {
+    .controls {
+        flex-direction: column; /* Coloca os botões em coluna para telas muito pequenas */
+        align-items: center;
+    }
+
+    .controls button {
+        margin-bottom: 10px; /* Espaço entre os botões */
+        width: 100%;         /* Botões ocupam 100% da largura */
+    }
+}
