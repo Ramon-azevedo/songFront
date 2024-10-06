@@ -1,11 +1,8 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ReactPlayer from "react-player";
-import './MediaPlayer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause, faStepBackward, faStepForward } from '@fortawesome/free-solid-svg-icons';
-
-
+import './MediaPlayer.css';
 
 // Definindo a interface para o tipo Song
 interface Song {
@@ -15,25 +12,68 @@ interface Song {
 }
 
 const MediaPlayer = () => {
-    const [songs, setSongs] = useState<Song[]>([]);   // Lista de músicas
+    // Lista de músicas definida localmente
+    const [songs] = useState<Song[]>([
+        {
+            title: "Umbrella",
+            artist: "Master producer",
+            url: "https://res.cloudinary.com/dnqprkqvq/video/upload/v1728050561/Umbrella_da89dd.m4a"
+        },
+        {
+            title: "Take_on_me",
+            artist: "Remastered",
+            url: "https://res.cloudinary.com/dnqprkqvq/video/upload/v1728050556/Take_on_me_xxnwdn.m4a"
+        },
+        {
+            title: "peloInterfone",
+            artist: "Ritchie",
+            url: "https://res.cloudinary.com/dnqprkqvq/video/upload/v1728050548/peloInterfone_dri0fe.m4a"
+        },
+        {
+            title: "meninaVeneno",
+            artist: "Ritchie",
+            url: "https://res.cloudinary.com/dnqprkqvq/video/upload/v1728050543/meninaVeneno_mqxdxm.m4a"
+        },
+        {
+            title: "melo my love",
+            artist: "Igor producer",
+            url: "https://res.cloudinary.com/dnqprkqvq/video/upload/v1728050538/melo_ewwywo.m4a"
+        },
+        {
+            title: "girlsJust",
+            artist: "Cyndi Lauper",
+            url: "https://res.cloudinary.com/dnqprkqvq/video/upload/v1728050530/girlsJust_tbymna.m4a"
+        },
+        {
+            title: "dancing",
+            artist: "SpeedUp",
+            url: "https://res.cloudinary.com/dnqprkqvq/video/upload/v1728050523/dancingSpeedUp_ooyx5i.m4a"
+        },
+        {
+            title: "LinkinPark",
+            artist: "Banda",
+            url: "https://res.cloudinary.com/dnqprkqvq/video/upload/v1727974452/LinkinPark_bun9da.m4a"
+        },
+        {
+            title: "DriveNightCall",
+            artist: "Drive",
+            url: "https://res.cloudinary.com/dnqprkqvq/video/upload/v1727968643/DriveNightCall_wunwnn.m4a"
+        },
+        {
+            title: "LifeGoesOn",
+            artist: "Oliver Tree",
+            url: "https://res.cloudinary.com/dnqprkqvq/video/upload/v1727968621/LifeGoesOn_jnsadq.m4a"
+        },
+        {
+            title: "SunFlower",
+            artist: "Spider-man",
+            url: "https://res.cloudinary.com/dnqprkqvq/video/upload/v1727968593/SunFlower_l4etge.m4a"
+        }
+        // Adicione mais músicas conforme necessário
+    ]);
+    
     const [currentSongIndex, setCurrentSongIndex] = useState<number>(0);  // Índice da música atual
     const [isPlaying, setIsPlaying] = useState<boolean>(false);  // Estado de reprodução
-
-    const backendUrl = process.env.REACT_APP_BACKEND_URL;
-
-    // Buscar a lista de músicas do back-end ao carregar o componente
-    useEffect(() => {
-        axios.get(`${backendUrl}api/songs`)
-            .then(response => {
-                setSongs(response.data);  
-                if (response.data.length > 0) {
-                    setCurrentSongIndex(0);  
-                }
-            })
-            .catch(error => {
-                console.error("Erro ao carregar as músicas", error);
-            });
-    }, [backendUrl]);
 
     // Função para pular para a próxima música
     const nextSong = () => {
