@@ -8,7 +8,7 @@ function App() {
     <>
       <div className='quadrado'>
       <div>
-        <img width={"100%"} src="../public/pictures/fundo_pequenoV.gif" alt="" />
+        <img width={"100%"} src="https://res.cloudinary.com/dnqprkqvq/image/upload/v1728190602/fundo_pequenoV_l9qmk6.gif" alt="" />
       </div>
       {<MediaPlayer/>}
       </div>
