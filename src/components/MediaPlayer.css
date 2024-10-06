@@ -55,10 +55,7 @@
 }
   
 @media (max-width: 480px) {
-    .controls {
-        flex-direction: column; /* Coloca os botões em coluna para telas muito pequenas */
-        align-items: center;
-    }
+    
 
     .controls button {
         margin-bottom: 10px; /* Espaço entre os botões */
